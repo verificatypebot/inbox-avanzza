@@ -380,7 +380,7 @@ const whatsappData = {
                         setSelectedQueueId(selectedId)
                       }}
                       multiple={false}
-                      title={'Fila de Transferência'}
+                      title={'Setor de Transferência'}
                     />
                   </Grid>
 

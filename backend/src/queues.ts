@@ -95,7 +95,7 @@ async function handleSendMessage(job) {
 }
 
 {/*async function handleVerifyQueue(job) {
-  logger.info("Buscando atendimentos perdidos nas filas");
+  logger.info("Buscando atendimentos perdidos nas setors");
   try {
     const companies = await Company.findAll({
       attributes: ['id', 'name'],
@@ -315,7 +315,7 @@ async function handleVerifyCampaigns(job) {
       const scheduledAt = moment(campaign.scheduledAt);
       const delay = scheduledAt.diff(now, "milliseconds");
       logger.info(
-        `Campanha enviada para a fila de processamento: Campanha=${campaign.id}, Delay Inicial=${delay}`
+        `Campanha enviada para a setor de processamento: Campanha=${campaign.id}, Delay Inicial=${delay}`
       );
       campaignQueue.add(
         "ProcessCampaign",
@@ -585,7 +585,7 @@ async function handleProcessCampaign(job) {
             { removeOnComplete: true }
           );
           queuePromises.push(queuePromise);
-          logger.info(`Registro enviado pra fila de disparo: Campanha=${campaign.id};Contato=${contacts[i].name};delay=${delay}`);
+          logger.info(`Registro enviado pra setor de disparo: Campanha=${campaign.id};Contato=${contacts[i].name};delay=${delay}`);
         }
         await Promise.all(queuePromises);
         await campaign.update({ status: "EM_ANDAMENTO" });
@@ -870,7 +870,7 @@ handleCloseTicketsAutomatic()
 handleInvoiceCreate()
 
 export async function startQueueProcess() {
-  logger.info("Iniciando processamento de filas");
+  logger.info("Iniciando processamento de setors");
 
   messageQueue.process("SendMessage", handleSendMessage);
 

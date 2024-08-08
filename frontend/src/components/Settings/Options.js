@@ -407,7 +407,7 @@ export default function Options(props) {
               }}
             >
               <MenuItem value={"disabled"}>Desabilitado</MenuItem>
-              <MenuItem value={"queue"}>Fila</MenuItem>
+              <MenuItem value={"queue"}>Setor</MenuItem>
               <MenuItem value={"company"}>Empresa</MenuItem>
             </Select>
             <FormHelperText>
@@ -500,7 +500,7 @@ export default function Options(props) {
 		{/* ENVIAR MENSAGEM DE TRANSFERENCIA DE SETOR/ATENDENTE */}
         <Grid xs={12} sm={6} md={4} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="sendMsgTransfTicket-label">Enviar mensagem de transferencia de Fila/agente</InputLabel>
+            <InputLabel id="sendMsgTransfTicket-label">Enviar mensagem de transferencia de Setor/agente</InputLabel>
             <Select
               labelId="sendMsgTransfTicket-label"
               value={SettingsTransfTicket}
@@ -520,7 +520,7 @@ export default function Options(props) {
 		{/* ENVIAR SAUDAÇÃO QUANDO HOUVER SOMENTE 1 FILA */}
         <Grid xs={12} sm={6} md={4} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="sendGreetingMessageOneQueues-label">Enviar saudação quando houver somente 1 fila</InputLabel>
+            <InputLabel id="sendGreetingMessageOneQueues-label">Enviar saudação quando houver somente 1 setor</InputLabel>
             <Select
               labelId="sendGreetingMessageOneQueues-label"
               value={sendGreetingMessageOneQueues}

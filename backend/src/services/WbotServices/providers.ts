@@ -12,8 +12,8 @@ import UpdateTicketService from "../TicketServices/UpdateTicketService";
 import fs from 'fs';
 
 export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, companyId: number, contact: Contact, wbot: WASocket) => {
-  const filaescolhida = ticket.queue?.name
-  if (filaescolhida === "2ª Via de Boleto" || filaescolhida === "2 Via de Boleto") {
+  const setorescolhida = ticket.queue?.name
+  if (setorescolhida === "2ª Via de Boleto" || setorescolhida === "2 Via de Boleto") {
     let cpfcnpj
     cpfcnpj = getBodyMessage(msg);
     cpfcnpj = cpfcnpj.replace(/\./g, '');
@@ -1185,7 +1185,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
     }
   }
 
-  if (filaescolhida === "Religue de Confiança" || filaescolhida === "Liberação em Confiança") {
+  if (setorescolhida === "Religue de Confiança" || setorescolhida === "Liberação em Confiança") {
     let cpfcnpj
     cpfcnpj = getBodyMessage(msg);
     cpfcnpj = cpfcnpj.replace(/\./g, '');

@@ -1145,7 +1145,7 @@ const verifyQueue = async (
     });
 
 
-    /* Tratamento para envio de mensagem quando a fila está fora do expediente */
+    /* Tratamento para envio de mensagem quando a setor está fora do expediente */
     if (choosenQueue.options.length === 0) {
       const queue = await Queue.findByPk(choosenQueue.id);
       const { schedules }: any = queue;
@@ -1888,7 +1888,7 @@ const handleMessage = async (
         if (scheduleType.value === "queue" && ticket.queueId !== null) {
 
           /**
-           * Tratamento para envio de mensagem quando a fila está fora do expediente
+           * Tratamento para envio de mensagem quando a setor está fora do expediente
            */
           const queue = await Queue.findByPk(ticket.queueId);
 
@@ -1985,7 +1985,7 @@ const handleMessage = async (
       return
     }
 
-    //openai na fila
+    //openai na setor
     if (
       !isGroup &&
       !msg.key.fromMe &&
@@ -2040,7 +2040,7 @@ const handleMessage = async (
       //Fluxo fora do expediente
       if (!msg.key.fromMe && scheduleType && ticket.queueId !== null) {
         /**
-         * Tratamento para envio de mensagem quando a fila está fora do expediente
+         * Tratamento para envio de mensagem quando a setor está fora do expediente
          */
         const queue = await Queue.findByPk(ticket.queueId);
 
